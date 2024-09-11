@@ -1,0 +1,107 @@
+@media screen and (max-width: 480px){
+  .nav_right .mobile_icon {padding: 16px 0;}
+
+    /* 모바일 메뉴 센터 */
+  .mobile_menu_center {padding-top: 24%; padding-left: 20px; padding-right: 0;}
+  .mobile_menu_center>h2 {font-weight: 300; font-size: 17px; margin-bottom: 10px; }
+  .mobile_menu_center>ul>li {font-size: 14px; color: #BCC3C7;}
+  /* 메뉴 플러스 아이콘 */
+  .mobile_menu_center>ul>li>.menu_more_icon {position: absolute; top: 24px; right: 20px;}
+  .menu_more_icon>em {display: block; width: 14px; height: 1px;}
+  .mobile_menu_center>ul>li>ul>li {font-weight: 200; font-size: 12px; line-height: 2.3; text-indent: 0;}
+
+  /* 모바일 메뉴 오른쪽 */
+  .mobile_menu_right {padding-top: 24%; padding-left: 30px; padding-right: 20px;}
+  .mobile_menu_right>ul>li {font-weight: 300; font-size: 17px;}
+  .mobile_menu_right>ul>li>a {font-size: 17px;}
+  .mobile_menu_right>ul>li>ul {font-size: 14px; padding-bottom: 20px;}
+  .mobile_menu_right>ul>li>ul>li>a {color: #BCC3C7;}
+
+  /* 비주얼 슬라이드 */
+  .visual_slide_txt>h2 {color: #fff; font-size: 32px;}
+  .visual_slide_txt>h3 {font-size: 19px;}
+  .visual_prev, .visual_next {color: #fff;}
+  
+/* 룩북타이틀 */
+.lookBook_wrap {padding: 45px 0;}
+.lookBook_tit {height: 175px;}
+.lookBook_tit_left>h2 {font-size: 19px; margin-bottom: 4px;}
+.lookBook_tit_left>p {font-size: 11px;}
+.lookBook_tit>span {height: 40px; margin: 10px auto; width: 1px;}
+.lookBook_tit_right>li {font-size: 12px; line-height: 1.9;}
+
+/* 룩북 슬라이드 */
+.lookBook_slides_wrap {margin: 20px 0;}
+.lookBook_slides {width: 656%;}
+.lookBook_slide:nth-child(2n-1) {width: 86%;}
+.lookBook_slide:nth-child(2n) {width: 78%;}
+
+.lfmall_go>a {width: 220px;}
+.lfmall_go>a>p {font-size: 17px; height: 64px; line-height: 64px;}
+.lfmall_go>a>p::after {width: 20px;}
+.lfmall_go>a>span {font-size: 11px; width: 64px; height: 64px;}
+.lfmall_go>a>span>em:nth-child(1) {margin-left: 16px;}
+.lfmall_go>a>span>em:nth-child(2) {margin-left: -100px;}
+.lfmall_go>a>span:last-child {border: 1px solid #BCC3C7;}
+
+.lfmall_go:hover>a>span>em:nth-child(1) {animation: marginLeft_1280 0.3s ease-in-out; animation-fill-mode: forwards;}
+.lfmall_go:hover>a>span>em:nth-child(2) {animation: marginLeft2_1280 0.4s ease-in-out; animation-fill-mode: forwards; animation-delay: 0.2s;}
+/* .lfmall_go:hover>a>span>em:nth-child(1) {color: blue;}
+.lfmall_go:hover>a>span>em:nth-child(2) {color: yellowgreen;} */
+.lfmall_go:hover>a>span:last-child {border-top: 1px solid #EE3023; border-bottom: 1px solid #EE3023;}
+
+
+/* ============================================ */
+ /* section3 미디어 */
+ .lfon_wrap {padding: 45px 0; background: #445560;}
+ .lfon_tit_head>h2 {font-size: 19px; margin-bottom: 4px;}
+ .lfon_tit_head>p {font-size: 11px;}
+ .lfon_tit_wrap>span {height: 40px; margin: 10px 0; width: 1px;}
+ .lfon_tit_slides_wrap>ul {font-size: 12px; font-weight: 300;}
+ 
+ 
+ /* .lfon_slides_wrap {padding: 30px 0;} */
+ .lfon_slides_wrap {padding: 20px 0 20px 20px;}
+ .lfon_slides {gap: 20px; width: 752%;}
+ .lfon_slides>li {width: 94%; box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);}
+ /* .play_icon {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);} */
+
+
+ /* ============================================ */
+/* section4 타이포그래피 */
+.typography_area {font-size: 30px; padding: 20px 0 10px 0;}
+/* .typography_area>h2:nth-child(1) {transform: translateX(20%);}
+.typography_area>h2:nth-child(2) {transform: translateX(-20%);} */
+
+
+/* ============================================ */
+/* section5 sns  */
+.social_board_wrap {padding: 45px 0;}
+.social_board_tit1>h2 {font-size: 19px;}
+.social_board_tit1>span {width: 40px; margin: 10px 10px;}
+.social_board_tit2>p {font-size: 11px; margin-top: 4px;}
+
+/* sns 슬라이드 */
+.social_board_slider {width: 1080%; gap: 20px; margin-top: 20px;}
+.social_board_slider>li {width: 90%;}
+
+
+/* footer */
+.footer_wrap {padding: 45px 0;}
+.foot_logo>p {font-size: 8px;}
+.foot_menu {margin: 30px auto;}
+.foot_menu>li>a {font-size: 12px;}
+.foot_menu>li {margin: 3px 0;}
+.foot_sns>li {margin: 0 8px;}
+
+.footer_wrap>p {font-size: 10px; margin-top: 30px;}
+
+
+
+/* 모바일 애니메이션 */
+@keyframes marginLeft_1280 {from {margin-left: 16px;} to {margin-left: 70px;}}
+@keyframes marginLeft2_1280 {from {margin-left: -100px;} to {margin-left: -85px;}}
+
+
+}
+

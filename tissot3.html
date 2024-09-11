@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Montserrat 구글폰트 링크-->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">  
+
+  <!--Noto Serif KR 구글폰트 링크-->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> <!--x-폰트링크-->
+
+  <link rel="stylesheet" href="font/spocarhansans.css"> <!--눈누폰트 스포카한산스네오-->
+
+  <link rel="stylesheet" href="css/tissot3.css"> <!--css파일 링크-->
+  <link rel="shortcut icon" href="images/fabicon.png">  <!--파비콘-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  <!--제이쿼리 CDN-->
+  <title>TISSOT 상세페이지</title>
+</head>
+<body>
+  <!-- 로그인팝업 -->
+  <div class="login_popup_area">
+    <span class="loginPopupClose"><i class="xi-close-thin"></i></span>
+    <div class="login_popup">
+      <h1><img src="images/logo_login.png" alt="로그인 로고"></h1>
+      <ul class="login_menu clearfix">
+        <li class="member active">회원 로그인</li>
+        <li class="not_menmber">비회원 주문조회</li>
+      </ul>
+      <form action="get">
+        <label for="user_id"><input type="text" id="user_id" placeholder="아이디를 입력해 주세요" required></label>
+        <label for="user_pw"><input type="password" id="user_pw" placeholder="비밀번호를 입력해 주세요" required></label>
+        <button id="login_btn">로그인</button>
+        <input type="checkbox" id="login_save">
+        <label for="login_save"><span><i class="xi-check"></i></span>아이디 저장</label>
+        <span>아이디 찾기</span><span></span><span>비밀번호 찾기</span>
+      </form>
+      <div class="login_sns clearfix">
+        <h2>SNS 간편 로그인</h2>
+        <ul>
+          <li><a href="#a"><i class="xi-apple"></i></a></li>
+          <li><a href="#a"><i class="xi-kakaotalk"></i></a></li>
+          <li><a href="#a"><i class="xi-naver"></i></a></li>
+          <li><a href="#a"><i class="xi-facebook"></i></a></li>
+        </ul>
+        <p>아직 회원이 아니신가요?</p>
+        <span>회원가입<i class="xi-hand-pointing"></i></span>
+      </div>
+    </div>  <!--login_popup 끝-->
+  </div>  <!--login_popup_area 끝-->
+
+  <div class="language_select_area">
+    <span><i class="xi-close-thin"></i></span>
+    <ul class="clearfix">
+      <li>유럽
+        <ul>
+          <li>벨기에<span>(Belgium)</span></li>
+          <li>덴마크<span>(Denmark)</span></li>
+          <li>독일<span>(Germany)</span></li>
+          <li>스페인<span>(Spain)</span></li>
+          <li>프랑스<span>(France)</span></li>
+          <li>아일랜드<span>(Ireland)</span></li>
+          <li>이탈리아<span>(Italy)</span></li>
+          <li>네덜란드<span>(Netherlands)</span></li>
+          <li>노르웨이<span>(Norway)</span></li>
+          <li>폴란드<span>(Poland)</span></li>
+          <li>포르투갈<span>(Portugal)</span></li>
+          <li>스위스<span>(Switzerland)</span></li>
+          <li>핀란드<span>(Finland)</span></li>
+          <li>스웨덴<span>(Sweden)</span></li>
+          <li>영국<span>(United Kingdom)</span></li>
+          <li>오스트리아<span>(Austria)</span></li>
+          <li>그리스<span>(Greece)</span></li>
+          <li>러시아<span>(Russia)</span></li>
+        </ul>
+      </li>
+      <li>아메리카
+        <ul>
+          <li>브라질<span>(Brazil)</span></li>
+          <li>캐나다<span>(Canada)</span></li>
+          <li>멕시코<span>(Mexico)</span></li>
+          <li>미국<span>(United States of America)</span></li>
+        </ul>
+      </li>
+      <li>아시아 & 오세아니아
+        <ul>
+          <li>호주<span>(Australia)</span></li>
+          <li>인도<span>(India)</span></li>
+          <li>태국<span>(Thailand)</span></li>
+          <li>중국<span>(China)</span></li>
+          <li>싱가포르<span>(Singapore)</span></li>
+          <li>일본<span>(Japan)</span></li>
+          <li>대만<span>(Taiwan)</span></li>
+          <li>홍콩<span>(Hong Kong)</span></li>
+          <li>말레이시아<span>(Malaysia)</span></li>
+          <li>대한민국<span>(Republic of Korea)</span></li>
+        </ul>
+      </li>
+      <li>중동 & 아프리카
+        <ul>
+          <li>남아프리카<span>(South Africa)</span></li>
+          <li>터키<span>(Turkey)</span></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- language 영역 끝 -->
+
+  
+  <header id="header">
+    <div class="header_top clearfix">
+      <div class="container">
+        <div class="head_lang">
+          <div class="lang">
+            <img src="images/lang_icon1.png" alt="대한민국국기">
+            <span>KOR</span>
+            <i class="xi-angle-down-min"></i>
+          </div>
+        </div>  <!--head_lang 끝-->
+        <div class="head_notice">
+          <p><em>티쏘</em> 공식 온라인몰입니다. 안심하고 구매하세요. <span><em>Tissot</em> Official website, Buy with confidence!</span></p>
+        </div>  <!--head_notice 끝-->
+      </div>  <!--container 끝-->
+      <script>
+        // 언어선택영역 스크립트
+        let lang = document.querySelector(".head_lang .lang");
+        let language_close = document.querySelector(".language_select_area>span");
+
+        lang.addEventListener("click", function(){
+          this.classList.add("active");
+          for(let i = 0; i < this.children.length; ++i){
+            this.children[i].style.visibility = "hidden";
+          };
+          // 언어선택 클릭시 바디태그 스크롤 막기
+          document.getElementsByTagName("body")[0].classList.add("not_scroll");
+          document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+          setTimeout(function(){
+            document.querySelector(".language_select_area").style.display = "block";
+          }, 300);
+        });
+
+        language_close.addEventListener("click", function(){
+          document.querySelector(".language_select_area").style.opacity = "0";
+
+          // 클로즈버튼 클릭시 바디태그 스크롤 원상복구
+          document.getElementsByTagName("body")[0].classList.remove("not_scroll");
+          document.getElementsByTagName("body")[0].style.overflowY = "auto";
+          
+          // 스케일만 먼저 작아지게 만든다
+          lang.style.transform = "scale(1)";
+          // 스케일이 작아졌으면 원상복구 시킨다
+         setTimeout(function(){
+            for(let i = 0; i < lang.children.length; ++i){
+              lang.children[i].style.visibility = "visible";
+            };
+            lang.style.transform = "";
+            lang.classList.remove("active");
+            document.querySelector(".language_select_area").style.opacity = "1";
+            document.querySelector(".language_select_area").style.display = "none";
+         },620);
+        });
+      </script>
+    </div>  <!--header_top 끝-->
+
+      <nav id="nav">
+        <div class="container">
+          <div class="nav clearfix">
+            <h1><a href="index.html"><img src="images/herder_logo.png" alt="메인해더로고"></a></h1>
+            <ul class="gnb_menu">
+              <li><a href="tissot2.html">MAN</a>
+                <ul>
+                  <li><a href="tissot2.html">티쏘 <span>T-Touch</span></a></li>
+                  <li><a href="tissot2.html">티쏘 <span>T-Classic</span></a></li>
+                  <li><a href="tissot2.html">티쏘 <span>T-Sports</span></a></li>
+                  <li><a href="tissot2.html">티쏘 <span>Heritage</span></a></li>
+                  <li><a href="tissot2.html">티쏘 <span>T-Gold</span></a></li>
+                  <li><a href="tissot2.html">티쏘 <span>T-Pocket</span></a></li>
+                  <li><a href="tissot2.html">티쏘 <span>T-Race</span></a></li>
+                </ul>
+              </li>
+              <li><a href="#a">WOMAN</a>
+                <ul>
+                  <li><a href="#a">티쏘 <span>T-Lady</span></a></li>
+                  <li><a href="#a">티쏘 <span>T-Classic</span></a></li>
+                  <li><a href="#a">티쏘 <span>Heritage</span></a></li>
+                  <li><a href="#a">티쏘 <span>T-Gold</span></a></li>
+                  <li><a href="#a">티쏘 <span>T-Pocket</span></a></li>
+                </ul>
+              </li>
+              <li><a href="#a">BRAND STORY</a>
+                <ul>
+                  <li><a href="#a">회사역사</a></li>
+                  <li><a href="#a">기술노하우</a></li>
+                  <li><a href="#a">스폰서링</a></li>
+                  <li><a href="#a">홍보대사</a></li>
+                  <li><a href="#a">티쏘뉴스</a></li>
+                </ul>
+              </li>
+              <li><a href="#a">COLLECTION</a>
+                <ul>
+                  <li><a href="#a">티쏘 씨스타</a></li>
+                  <li><a href="#a">티쏘 슈퍼스포츠 크로노</a></li>
+                  <li><a href="#a">티쏘 <span>PRX</span></a></li>
+                  <li><a href="#a">티쏘 르 로끌</a></li>
+                  <li><a href="#a">티쏘 슈망 데 뚜렐</a></li>
+                  <li><a href="#a">티쏘 꾸뜨리에</a></li>
+                  <li><a href="#a">티쏘 트래디션</a></li>
+                  <li><a href="#a">티쏘 <span>V8</span></a></li>
+                  <li><a href="#a">티쏘 젠틀맨</a></li>
+                </ul>
+              </li>
+              <li><a href="#a">SUPPORT</a>
+                <ul>
+                  <li><a href="#a"><span>FAQ</span></a></li>
+                  <li><a href="#a">문의하기</a></li>
+                  <li><a href="#a">서비스센터</a></li>
+                  <li><a href="#a">시계점검</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="head_right_icons">
+              <li class="login_icon"><a href="#a"><i class="xi-user-o"></i></a><em>로그인</em></li>
+              <li><a href="#a"><i class="xi-heart-o"></i></a><em>위시리스트</em></li>
+              <li class="search_btn"><a href="#a"><i class="xi-search"></i></a><em>검색</em></li>
+              <li class="ham_menu_icon"><a href="#a"><span></span><span></span><span></span></a><em>전체메뉴</em></li>
+            </ul> <!--head_right_icons 끝-->
+            <ul class="all_menu_area clearfix">
+              <li>
+                <div>
+                  <ul>
+                    <li><a href="#a">MAN</a></li>
+                    <li><span></span></li>
+                    <li><a href="#a">티쏘 <span>T-Touch</span></a></li>
+                    <li><a href="#a">티쏘 <span>T-Classic</span></a></li>
+                    <li><a href="#a">티쏘 <span>T-Sports</span></a></li>
+                    <li><a href="#a">티쏘 <span>Heritage</span></a></li>
+                    <li><a href="#a">티쏘 <span>T-Gold</span></a></li>
+                    <li><a href="#a">티쏘 <span>T-Pocket</span></a></li>
+                    <li><a href="#a">티쏘 <span>T-Race</span></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <ul>
+                    <li><a href="#a">WOMAN</a></li>
+                    <li><span></span></li>
+                    <li><a href="#a">티쏘 <span>T-Lady</span></a></li>
+                    <li><a href="#a">티쏘 <span>T-Classic</span></a></li>
+                    <li><a href="#a">티쏘 <span>Heritage</span></a></li>
+                    <li><a href="#a">티쏘 <span>T-Gold</span></a></li>
+                    <li><a href="#a">티쏘 <span>T-Pocket</span></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <ul>
+                    <li><a href="#a">BLAND STORY</a></li>
+                    <li><span></span></li>
+                    <li><a href="#a">회사역사</a></li>
+                    <li><a href="#a">기술노하우</a></li>
+                    <li><a href="#a">스폰서링</a></li>
+                    <li><a href="#a">홍보대사</a></li>
+                    <li><a href="#a">티쏘뉴스</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <ul>
+                    <li><a href="#a">COLLECTION</a></li>
+                    <li><span></span></li>
+                    <li><a href="#a">티쏘 씨스타</a></li>
+                    <li><a href="#a">티쏘 슈퍼스포츠 크로노</a></li>
+                    <li><a href="#a">티쏘 <span>PRX</span></a></li>
+                    <li><a href="#a">티쏘 르 로끌</a></li>
+                    <li><a href="#a">티쏘 슈망 데 뚜렐</a></li>
+                    <li><a href="#a">티쏘 꾸뜨리에</a></li>
+                    <li><a href="#a">티쏘 트래디션</a></li>
+                    <li><a href="#a">티쏘 <span>V8</span></a></li>
+                    <li><a href="#a">티쏘 젠틀맨</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <ul>
+                    <li><a href="#a">SUPPORT</a></li>
+                    <li><span></span></li>
+                    <li><a href="#a"><span>FAQ</span></a></li>
+                    <li><a href="#a">문의하기</a></li>
+                    <li><a href="#a">서비스센터</a></li>
+                    <li><a href="#a">시계점검</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul> <!--all_menu_area 끝-->
+          </div>  <!-- class - nav 끝-->
+         </div>  <!--container 끝-->
+         <div class="search_area">
+          <div class="search_wrap">
+           <input type="text" id="search_input" placeholder="검색어를 입력해 주세요.">
+           <span id="saerch_icon" class="xi-search"></span>
+           <div class="recommend_keyword_wrap">
+             <p>추천 검색어</p>
+             <ul>
+               <li><a href="#"><i class="xi-search"></i>뉴 컬렉션</a></li>
+               <li><a href="#"><i class="xi-search"></i>베스트 제품</a></li>
+               <li><a href="#"><i class="xi-search"></i>티쏘 화보</a></li>
+               <li><a href="#"><i class="xi-search"></i>뉴스룸</a></li>
+               <li><a href="#"><i class="xi-search"></i>미디어</a></li>
+               <li><a href="#"><i class="xi-search"></i>남자시계</a></li>
+             </ul>
+           </div>  <!--recommend_keyword_wrap 끝-->
+          </div>
+        </div> <!--search_area 끝-->
+      </nav>
+    <script>
+      // 로그인팝업
+      let login_popup_area = document.querySelector(".login_popup_area");
+      let login_icon = document.querySelector(".login_icon");
+      let login_popup = document.querySelector(".login_popup");
+      let loginPopupClose = document.querySelector(".loginPopupClose")
+
+      login_icon.addEventListener("click", function(){
+          login_popup_area.style.width = "700px";
+        setTimeout(function(){
+          login_popup.style.opacity = "1";
+          loginPopupClose.style.opacity = "1";
+        }, 700);
+      });
+      loginPopupClose.addEventListener("click", function(){
+        this.children[0].style.transform = "rotate(360deg)";
+        setTimeout(function(){
+          login_popup_area.style.width = "";
+        }, 400);
+        login_popup.style.opacity = "";
+        setTimeout(()=>{
+          loginPopupClose.style.opacity = "";
+        },700);
+        setTimeout(function(){
+          loginPopupClose.children[0].style.transform = "none";
+        },1500)
+      });
+
+      // 햄버거메뉴 스크립트
+      let ham_menu_icon = document.querySelector(".ham_menu_icon");
+      ham_menu_icon.addEventListener("click", function(){
+        this.classList.toggle("active");
+        document.querySelector(".all_menu_area").classList.toggle("active");
+        if(this.classList.contains("active")){
+          document.querySelectorAll(".head_right_icons>li>em").forEach(em=>{
+           em.style.visibility = "hidden";
+          });
+          document.querySelectorAll(".nav .gnb_menu>li").forEach(li=>{
+            li.style.pointerEvents = "none";
+          });
+        } else {
+          document.querySelectorAll(".head_right_icons>li>em").forEach(em=>{
+            em.style.visibility = "visible";
+          });
+          document.querySelectorAll(".nav .gnb_menu>li").forEach(li=>{
+            li.style.pointerEvents = "auto";
+          });
+        }
+      });
+
+       // 검색창 나타나기
+     let search_btn = document.querySelector(".search_btn");
+      let search_area = document.querySelector(".search_area");
+      let search_input = document.querySelector("#search_input");
+      let search_btn_i = document.querySelector(".search_btn i");
+      let search_wrap = document.querySelector(".search_wrap");
+      let recommend_keyword_wrap = document.querySelector(".recommend_keyword_wrap");
+
+      search_btn.addEventListener("click", function(){
+        if(!search_area.classList.contains("show")){
+          search_btn_i.className = "xi-close";
+          search_area.classList.remove("hide");
+          search_area.classList.add("show");
+          search_input.focus();
+        } else if(search_area.classList.contains("show")){
+          search_btn_i.className = "xi-search";
+          search_area.classList.remove("show");
+          search_area.classList.add("hide");
+          setTimeout(function(){
+            search_area.classList.remove("hide");
+          }, 300)
+        } 
+      })
+
+      //검색창 이벤트들
+      search_input.addEventListener("focus", function(){
+        search_wrap.style.boxShadow = "0 1px 6px #ccc";
+        // if(search_input.value != null){
+        //   document.querySelector(".recommend_keyword_wrap").style.display = "none";
+        // }
+      })
+
+      search_input.addEventListener("click", function(){
+        search_wrap.style.height = "auto";
+        recommend_keyword_wrap.style.display = "block";
+      })
+      
+      // search_input.addEventListener("blur", function(e){
+      //   console.log(e.target)
+      //   search_wrap.style.boxShadow = "0 1px 6px #ddd";
+      //   search_wrap.style.height = "";
+      //   recommend_keyword_wrap.style.display = "none";    
+      // })
+
+      
+      window.addEventListener("click", function(e){
+        if(recommend_keyword_wrap.style.display == "block"){
+          if(e.target != recommend_keyword_wrap && e.target != search_input){
+            recommend_keyword_wrap.style.display = "none";
+            search_wrap.style.boxShadow = "0 1px 6px #ddd";
+            search_wrap.style.height = "";
+          }
+        }
+      })
+
+      search_input.addEventListener("input", function(){
+        recommend_keyword_wrap.style.display = "none";
+        search_wrap.style.height = "";
+      })
+
+      let keyword_li = document.querySelectorAll(".recommend_keyword_wrap>ul>li")
+
+     keyword_li.forEach(li=>{
+        li.addEventListener("click", function(e){
+          e.preventDefault() ////이렇게 안해주면 스크롤이 밑에 있을 때 자꾸 인풋태그로 화면이 전환된다(li안에 a태그가 있어서)
+          search_input.value = li.children[0].textContent; 
+          search_input.focus();
+        })
+     })
+
+    //  키보드 앤터키를 눌렀을 때 결과출력
+     search_input.addEventListener("keydown", searchKeyword);
+     
+      function searchKeyword(e){
+        if(e.keyCode == 13){
+          alert("검색어가 많이 준비되지 않았습니다. 특정 키워드만 검색해 주세요.")  
+        }
+      }
+
+      // 검색아이콘을 클릭했을 때 결과출력
+      document.querySelector("#saerch_icon").addEventListener("click", function(){
+          alert("검색어가 많이 준비되지 않았습니다. 특정 키워드만 검색해 주세요.")
+     });
+    </script>
+  </header> <!--id - header 끝-->
+  <section id="section1">
+    <div class="container">
+      <div class="current_nav">
+        홈 > 남자시계 > 젠틀맨 오토
+      </div>
+      <div class="pdt_detail_top_area clearfix">
+        <div class="pdt_detail_top_left">
+          <div class="pdt_detail_mainImg">
+            <div class="detail_mainImg">
+              <img src="images/pdt_detail_mainImg.png" alt="메인디테일이미지">
+            </div>
+            <div class="pdt_detail_subImg clearfix">
+              <div class="detail_subImg sub_img1">
+                <img src="images/pdt_detail_subImg1.png" alt="서브이미지1">
+              </div>
+              <div class="detail_subImg sub_img2">
+                <img src="images/pdt_detail_subImg2.png" alt="서브이미지2">
+              </div>
+              <div class="detail_subImg sub_img3">
+                <img src="images/pdt_detail_subImg3.png" alt="서브이미지3">
+              </div>
+              <div class="detail_subImg sub_img4">
+                <img src="images/pdt_detail_subImg4.png" alt="서브이미지4">
+              </div>
+            </div>  <!--pdt_detail_subImg 끝-->
+          </div>
+        </div>  <!--pdt_detail_top_left 끝-->
+        <div class="pdt_detail_top_right">
+          <i class="xi-share-alt-o"></i>
+          <div class="pdt_detail_right_tit">
+            <p>[T927.407.41.031.00]</p>
+            <h2>티쏘 젠틀맨 오토 로즈골드 베젤 18K 실버 40mm</h2>
+            <p>오토매틱 무브먼트</p>
+            <h3>1,970,000<span>원</span></h3>
+          </div>
+          <div class="pdt_detail_right_txt1 clearfix">
+            <ul>
+              <li>배송방법</li>
+              <li>배송비</li>
+              <li>포인트</li>
+              <li>카드혜택</li>
+            </ul>
+            <ul>
+              <li>해외배송</li>
+              <li>무료배송</li>
+              <li class="clearfix">최대 2.0% 적립 <i class="xi-help-o"></i></li>
+              <li class="clearfix">할부혜택 자세히 보기 <i class="xi-help-o"></i></li>
+            </ul>
+          </div>
+          <div class="pdt_detail_right_txt2 clearfix">
+            <ul>
+              <li>제조국</li>
+              <li>도착예정일</li>
+            </ul>
+            <ul>
+              <li>Swiss Made</li>
+              <li>오늘 주문 시, <span>8/12(목)</span> 도착 예정</li>
+            </ul>
+          </div>
+          <!-- 가격 및 옵션영역 -->
+          <div class="pdt_detail_right_price">
+            <div class="pdt_option clearfix">
+              <p>티쏘 젠틀맨 오토 골드베젤 18K 실버 40mm</p>
+              <div class="pdt_btn_area">
+                <button class="pdt_minus_btn"><i class="xi-minus-thin"></i></button>
+                <input type="number" min="0" max="10" value="1">
+                <button class="pdt_plus_btn"><i class="xi-plus-thin"></i></button>
+              </div>
+              <span><em>1,970,000</em>원</span>
+            </div>  <!--pdt_option 끝-->
+            <div class="pdt_purchase_area">
+              <div class="clearfix">
+                <p>총 결제 예상 금액</p>
+                <span id="last_price"><em>1,970,000</em>원</span>
+              </div>
+              <button><i class="xi-maker"></i>판매점 검색</button>
+              <button><i class="xi-heart-o"></i>위시리스트</button>
+              <button>바로구매</button>
+            </div>
+          </div>
+        </div>  <!--pdt_detail_top_right 끝-->
+      </div>  <!--pdt_detail_top_area 끝-->
+    </div>  <!--container 끝-->
+    <script>
+      // 제품 디테일 이미지 스크립트
+      let detail_mainImg = document.querySelector(".detail_mainImg>img");
+      let detail_subImg = document.querySelectorAll(".detail_subImg>img");
+
+      detail_subImg.forEach(simg=>{
+        simg.addEventListener("mouseenter", function(){
+          detail_mainImg.src = simg.src;
+          // detail_mainImg
+          detail_mainImg.parentElement.style.border = "1px solid #f7f7f7";
+        });
+      });
+      document.querySelector(".pdt_detail_mainImg").addEventListener("mouseleave", function(){
+        detail_mainImg.src = "images/pdt_detail_mainImg.png";
+        detail_mainImg.parentElement.style.borderColor = "transparent";
+      });
+      
+      // 구매 수량 스크립트
+      let pdt_minus_btn = document.querySelector(".pdt_minus_btn");
+      let pdt_plus_btn = document.querySelector(".pdt_plus_btn");
+      let pdt_btn_area_input = document.querySelector(".pdt_btn_area>input");
+      let currentValue = pdt_btn_area_input.value;
+      let pdt_option_price = document.querySelector(".pdt_option>span>em");
+
+      pdt_plus_btn.onclick = function(){
+        if(currentValue <= 9){
+          currentValue = Number(currentValue) + 1;
+          pdt_btn_area_input.value = currentValue;
+        } else {
+          alert("제품 구매 수량은 10개를 초과할 수 없습니다!")
+        }
+        showPrice(currentValue);
+      };
+
+      pdt_minus_btn.onclick = function(){
+        if(currentValue >= 1){
+          currentValue = Number(currentValue) - 1;
+          pdt_btn_area_input.value = currentValue;
+        } else {
+          alert("제품 구매 수량은 음수 값을 입력할 수 없습니다!")
+        };
+        showPrice(currentValue);
+      };
+
+      function showPrice(q){
+        let price = q * 1970000;
+        pdt_option_price.innerHTML = price.toLocaleString();
+        document.querySelector("#last_price>em").innerHTML = price.toLocaleString();
+      }
+
+    </script>
+  </section>
+  <article id="article1">
+    <div class="container">
+      <div class="relation_pdt_wrap">
+        <h3>연관상품</h3>
+        <ul class="clearfix">
+          <li><a href="#a">
+            <div class="relation_pdt_img">
+              <img src="images/relation_img1.png" alt="제품리스트 이미지1">
+            </div>
+            <div class="relation_pdt_txt">
+              <h3>티쏘 젠틀맨 파워매틱80 실리시움 18K 골드베젤 실버 40mm</h3>
+              <span>1,970,000<em>원</em></span>
+            </div>
+          </a></li>
+          <li><a href="#a">
+            <div class="relation_pdt_img">
+              <img src="images/relation_img2.png" alt="제품리스트 이미지2">
+            </div>
+            <div class="relation_pdt_txt">
+              <h3>티쏘 젠틀맨 파워매틱80 실리시움 18K 골드베젤 블랙 40mm</h3>
+              <span>1,890,000<em>원</em></span>
+            </div>
+          </a></li>
+          <li><a href="#a">
+            <div class="relation_pdt_img">
+              <img src="images/relation_img3.png" alt="제품리스트 이미지2">
+            </div>
+            <div class="relation_pdt_txt">
+              <h3>티쏘 젠틀맨 파워매틱80 실리시움 18K 골드베젤 브라운 40mm</h3>
+              <span>1,890,000<em>원</em></span>
+            </div>
+          </a></li>
+          <li><a href="#a">
+            <div class="relation_pdt_img">
+              <img src="images/relation_img4.png" alt="제품리스트 이미지2">
+            </div>
+            <div class="relation_pdt_txt">
+              <h3>티쏘 젠틀맨 파워매틱80 실리시움 18K 골드베젤 크림오팔 40mm</h3>
+              <span>1,890,000<em>원</em></span>
+            </div>
+          </a></li>
+          <li><a href="#a">
+            <div class="relation_pdt_img">
+              <img src="images/relation_img5.png" alt="제품리스트 이미지2">
+            </div>
+            <div class="relation_pdt_txt">
+              <h3>티쏘 젠틀맨 파워매틱80 실리시움 블루 40mm</h3>
+              <span>1,020,000<em>원</em></span>
+            </div>
+          </a></li>
+          <li><a href="#a">
+            <div class="relation_pdt_img">
+              <img src="images/relation_img6.png" alt="제품리스트 이미지2">
+            </div>
+            <div class="relation_pdt_txt">
+              <h3>티쏘 젠틀맨 파워매틱80 실리시움 실버 40mm</h3>
+              <span>1,020,000<em>원</em></span>
+            </div>
+          </a></li>
+        </ul>
+      </div>  <!--relation_pdt_wrap 끝-->
+      <span class="relation_pdt_prev"><i class="xi-angle-left-thin"></i></span>
+      <span class="relation_pdt_next"><i class="xi-angle-right-thin"></i></span>
+    </div>  <!--container 끝-->
+    <script>
+      // 관련상품 슬라이드 스크립트
+      let relation_pdt_wrap_ul = document.querySelector(".relation_pdt_wrap>ul");
+      let relation_pdt_wrap_li = document.querySelectorAll(".relation_pdt_wrap li");
+      let relationSlide_idx = 0;
+      let relation_pdt_prev = document.querySelector(".relation_pdt_prev");
+      let relation_pdt_next = document.querySelector(".relation_pdt_next");
+
+      // relation_pdt_wrap_ul의 width값 셋팅
+      relation_pdt_wrap_ul.style.width = (332 + 24) * relation_pdt_wrap_li.length - 24 + "px";
+
+       // relation_pdt_wrap_ul의 첫 트렌지션 셋팅
+       setTimeout(()=>{
+        relation_pdt_wrap_ul.style.left = "0";
+       }, 100)
+
+      // prev, next 슬라이드 컨트롤
+      relation_pdt_prev.addEventListener("click", function(){
+        relationSlide(relationSlide_idx - 1);
+      });
+      relation_pdt_next.addEventListener("click", function(){
+        relationSlide(relationSlide_idx + 1);
+      });
+
+      function relationSlide(n){
+        relationSlide_idx = n;
+
+        // 슬라이드 인덱스에 따라 prev, next 활성화 비활성화
+        if(relationSlide_idx <= 0){
+          relation_pdt_prev.style.pointerEvents = "none";
+          relation_pdt_prev.style.color = "#cacaca";
+        } else {
+          relation_pdt_prev.style.pointerEvents = "auto";
+          relation_pdt_prev.style.color = "#7e7e7e";
+        }
+        if(relationSlide_idx == 2){
+          relation_pdt_next.style.pointerEvents = "none";
+          relation_pdt_next.style.color = "#cacaca";
+        } else {
+          relation_pdt_next.style.pointerEvents = "";
+          relation_pdt_next.style.color = "#7e7e7e";
+        }
+        relation_pdt_wrap_ul.style.left = -(332 + 24) * relationSlide_idx + "px";
+      };
+
+    </script>
+  </article>  <!--article 1 끝-->
+  <main id="main1">
+    <div class="container">
+      <div class="pdt_detail_info_area">
+        <ul class="pdt_detail_info_menu">
+          <li class="active"><a href="#page1">상세정보</a></li>
+          <li><a href="#article2">상품리뷰(78)</a></li>
+          <li><a href="#page2">교환 <span>&middot;</span> 반품 안내</a></li>
+          <li><a href="#a">상품문의(98)</a></li>
+        </ul>
+        <article class="pdt_detail_info_1">
+          <h2>TISSOT GENTLEMAN COLLECTION</h2>
+          <p>티쏘 젠틀맨 오토 로즈골드 베젤 18K</p>
+          <div class="pdt_info_video">
+            <iframe src="https://www.youtube-nocookie.com/embed/gdF6n9vXkIE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </article>  <!--pdt_detail_info_1 끝-->
+        <article class="pdt_detail_info_2 clearfix">
+          <div class="pdt_detail_info_2_left">
+            <img src="images/pdt_detail_info_2_left_img.png" alt="세부정보이미지">
+          </div>
+          <div class="pdt_detail_info_2_right" id="page1">
+            <div class="pdt_detail_info_2_right_point">
+              <h3>DESIGN POINT</h3>
+              <span></span>
+              <h4>스틸과 솔리드 18K 핑크골드로 제작되어<br>
+                세련되면서도 절제된 젠틀맨 오토</h4>
+              <p>최고의 기술력을 자랑하는 실리콘 밸런스 스프링이 장착된<br>
+                ETA C07.811 무브먼트로 티쏘의 정교한 시계 제조기술과 세심한 디테일을<br>
+                보여주는 모델입니다</p>  
+            </div>
+            <div class="pdt_detail_info_2_right_spec clearfix">
+              <h3>DETAILS SPEC</h3>
+              <span></span>
+              <ul>
+                <li>성별</li>
+                <li>무브먼트</li>
+                <li>무브먼트 칼리버</li>
+                <li>케이스 소재</li>
+                <li>케이스 사이즈</li>
+                <li>방수기능</li>
+                <li>글라스 소재</li>
+                <li>다이얼</li>
+                <li>다이얼 색상</li>
+                <li>브라켓</li>
+                <li>브라켓 색상</li>
+                <li>스트랩</li>
+                <li>스크랩 색상</li>
+              </ul>
+              <ul>
+                <li>남성용</li>
+                <li>스위스 오토매틱</li>
+                <li>실버 11 1/2</li>
+                <li>316L 스테인리스 스틸케이스 및<br>
+                  18K 로즈골드 베젤</li>
+                <li>40x40mm / 10.6mm</li>
+                <li>방수 최대 기압 5바(50m/165ft)</li>
+                <li>반구형 스크래치 방지 사파이어 크리스탈</li>
+                <li>인덱스</li>
+                <li>실버</li>
+                <li>스테인리스 스틸</li>
+                <li>실버</li>
+                <li>스테인리스 스틸</li>
+                <li>실버</li>
+              </ul>
+            </div>
+          </div>
+        </article>  <!--pdt_detail_info_2 끝-->
+        <article class="pdt_detail_info_3">
+          <div class="pdt_detail_info_3_img1">
+            <img src="images/pdt_detail_info_3_img1.png" alt="상세설명 이미지">
+            <p>티쏘 젠틀맨은 어떤 상황에서도 활용가능한 인체 공학적이고 우아한 다목적용 시계입니다.<br>
+              주말에 여과활동을 즐기는 상황뿐 아니라 기존의 드레스 코드가 적용되는 비스니스<br>
+              환경에서 착용하기에도 적합합니다. 현대적이고 활동적인 남성의 삶의 일부인<br>
+              티쏘 젠틀맨은 매일, 모든 경우, 모든 스타일에 완벽한 동반자가 됩니다.</p>
+          </div>
+          <div class="pdt_detail_info_3_img2 clearfix">
+            <img src="images/pdt_detail_info_3_img2-1.png" alt="상세설명 이미지">
+            <img src="images/pdt_detail_info_3_img2-2.png" alt="상세설명 이미지">
+            <img src="images/pdt_detail_info_3_img2-3.png" alt="상세설명 이미지">
+            <img src="images/pdt_detail_info_3_img2-4.png" alt="상세설명 이미지">
+          </div>
+        </article>  <!--pdt_detail_info_3 끝-->
+        <article class="pdt_detail_info_4">
+          <h2>TECHNICAL DETAILS</h2>
+          <div class="pdt_detail_info_4_img_area">
+            <img class="info4_img1" src="images/pdt_detail_info_4_img1.png" alt="상세설명 이미지">
+            <div class="pdt_detail_info_4_txt_area info_4_txt1">
+              <div class="pdt_detail_info_4_txt">
+                <h4>SILICIUM</h4>
+                <h3>실리시움</h3>
+                <span></span>
+                <p>1930년대에 전자제품의 출현으로 티쏘는 축적된 노하우를 투입하여 자기장이 시계의<br>
+                  무브먼트 작동을 방해하지 못하도록 설계했습니다.<br>
+                  실리콘이 무브먼트 조정기관의 부품을 위한 새로운 소재로 등장함에따라<br>
+                  티쏘는 휴대폰, TV, 컴퓨터, 헤어드라이어, 라디오와같은 일상에서 사용하는 물체에 의해<br>
+                  발생하는 자기장에 훨씬 나은 저항을 제공하게 되었습니다.<br>
+                  이러한 혁신적인 기술의 적용으로 티쏘시계는 훨씬 향상된 정확도를 제공합니다.</p>
+              </div>
+            </div>  <!--pdt_detail_info_4_txt_area 끝-->
+            <div class="pdt_detail_info_4_txt_area info_4_txt2">
+              <div class="pdt_detail_info_4_txt">
+                <h4>POWERMATIC 80</h4>
+                <h3>파워매틱 80</h3>
+                <span></span>
+                <p>오토매틱 시계는 착용자의 움직임을 에너지원으로 사용해 작동합니다.<br>
+                  이러한 메커니즘을 작동시키는 것은 바로 손목의 움직임입니다.<br>
+                  파워매틱 80은 80시간의 파워 리저브를  제공함으로 3일동안 시계를 착용하지 않아도<br>
+                  계속 정확한 시간을 알려줄 수 있습니다. 일반적으로 1.5일의 파워 리저브를 제공하는<br>
+                  타 경쟁사의 제품들에 비해 혁신적이고 효율적인 무브먼트입니다.</p>
+              </div>
+            </div>  <!--pdt_detail_info_4_txt_area 끝-->
+            <img class="info4_img2" src="images/pdt_detail_info_4_img2.png" alt="상세설명 이미지">
+            <img class="info4_img3" src="images/pdt_detail_info_4_img3.png" alt="상세설명 이미지">
+            <div class="pdt_detail_info_4_txt_area info_4_txt3">
+              <div class="pdt_detail_info_4_txt">
+                <h4>18K ROSEGOLD</h4>
+                <h3>18캐럿 로즈골드</h3>
+                <span></span>
+                <p>금은 세상에서 가장 귀중한 금속 중 하나이며, 산화되지 않고 융해되지 않으며<br>
+                  변질되지 않는 등 기술적으로 많은 특성을 가지고 있습니다.<br>
+                  티쏘는 로즈골드 시계의 아름다운 컬러를 오래도록 보존하기 위해,<br>
+                  자체적으로 개발한 18캐럿 로즈골드 합금을 사용합니다. 이러한 전문성과<br>
+                  노하우로 인해 티쏘시계는 대대로 물려줄 수 있을 만큼 수명이 깁니다.</p>
+              </div>
+            </div>  <!--pdt_detail_info_4_txt_area 끝-->
+            <div class="pdt_detail_info_4_txt_area info_4_txt4">
+              <div class="pdt_detail_info_4_txt">
+                <h4>WATER RESISTANCE</h4>
+                <h3>방수기능</h3>
+                <span></span>
+                <p>티쏘시계 케이스는 모두 방수기능을 포함한 수 많은 검사를 거쳐서 탄생합니다.<br>
+                  티쏘는 시계가 처할 수 있는 실제 상황을 재현하여 시계에 충격과 압력뿐아니라<br>
+                  액체, 가스, 먼지의 침투에 견딜 수 있는 능력이 있는지 테스트합니다.</p>
+              </div>
+            </div>  <!--pdt_detail_info_4_txt_area 끝-->
+            <img class="info4_img4" src="images/pdt_detail_info_4_img4.png" alt="상세설명 이미지">
+            <img class="info4_img5" src="images/pdt_detail_info_4_img5.png" alt="상세설명 이미지">
+            <div class="pdt_detail_info_4_txt_area info_4_txt5"">
+              <div class="pdt_detail_info_4_txt">
+                <h4>SAPPHIRE CRYSTAL</h4>
+                <h3>사파이어 크리스탈</h3>
+                <span></span>
+                <p>사파이어 크리스탈은 탁월한 내충격성 및 투명성으로인해 다이얼과 렌즈의<br>
+                  뛰어난 가독성을 부여해줍니다. 다이아몬드 다음으로 견고한 이 소재는<br>
+                  특히 긁힘 방지 특성으로 인해 고급 시계제조업계에서 사용됩니다.</p>
+              </div>
+            </div>  <!--pdt_detail_info_4_txt_area 끝-->
+          </div>  <!--pdt_detail_info_4_img_area 끝-->
+        </article>
+      </div>  <!--pdt_detail_info_area 끝-->
+      <div class="return_pdt_info_area" id="page2">
+        <h2>교환 &middot; 반품 안내</h2>
+        <div class="return_pdt_info">
+          <h3>교환 &middot; 반품</h3>
+          <ul>
+            <li>상품 수령일로부터 7일 이내에 미사용 제품에 한해 반품이 가능합니다.</li>
+            <li>상품의 사용 후에는 사유에 관계없이 반품 및 교환이 불가하며(상품 불량 예외), 본사 A/S 센터에서 A/S로 진행됩니다.</li>
+            <li>상품 하자로 인한 교환 시 맞교환이 아닌 선회수 후 처리되며 배송비는 업체에서 부담합니다.<br>
+              업체로 상품 입고 후 정상 상품으로 판명될 시 반송조치 될 수 있으며,<br>
+              매장 배송의 경우 각 매장별 티쏘 CS정책에 따라 운영되오니 이상 있을 시 문의 주시기 바랍니다.</li>
+          </ul>
+        </div>
+        <div class="return_pdt_no">
+          <h3>교환 &middot; 반품 불가사항</h3>
+          <ul>
+            <li>가죽밴드 : 울거나 구겨짐 및 착용흔적, 또는 얼룩이 있을 경우</li>
+            <li>스틸밴드 : 밴드 길이 조절 및 흠집이 있을 경우</li>
+            <li>상품 택 : 택을 제거하거나 분실하였을 경우</li>
+            <li>몸체 : 흠집 및 유리 보호필름이 제거되거나 분실되었을 경우</li>
+            <li>케이스 : 분실 또는 반품, 교환 중 포장 미흡으로 인해 상품 및 케이스가 파손되었거나 변형 되었을 경우(전용 케이스가 아닌 경우 포함)</li>
+            <li>상품 구성품 중 일부(케이스, 시계, 보증서, 설명서, 보호필름)를 훼손 및 분실하였을 경우</li>
+            <li>상품의 훼손으로 재판매가 불가한 경우</li>
+          </ul>
+        </div>  <!--return_pdt_no 끝-->
+        <div class="deliver_policy">
+          <h3>배송정책</h3>
+          <ul>
+            <li>수입 상품인 관계로 현지 상황에 따라 수입지연, 품절, 단종 등이 발생할 수 있습니다.</li>
+            <li>고객님께서 주문하신 상품은 입금 확인 후 배송됩니다. 다만, 상품종류에 따라서 상품의 배송이 다소 지연될 수 있습니다.</li>
+          </ul>
+        </div>  <!--deliver_policy 끝-->
+      </div>
+    </div>  <!--container 끝-->
+  </main>
+  <article id="article2">
+    <div class="container">
+      <div class="review_area">
+        <h2>상품리뷰</h2>
+        <p>총 <em>78</em>건의 구매후기가 있습니다.</p>
+        <div class="review_list">
+          <ul>
+            <li><a href="#a">
+              <ul class="clearfix">
+                <li>★★★★★</li>
+                <li>신랑 선물로 몰래 주문했는데 실물이 더 이쁘고 완전 비싸보입니다 ㅎㅎ 신랑이 깜짝 놀라며 너무 좋아했어요~ 신랑 손목이 가늘어서 좀 줄여야할듯 하지만 너무 이쁘고 좋았어요~ 포장상태 너무좋았구요 ~ 빠른배송두 감사합니다~</li>
+                <li>cha*******</li>
+                <li>2021.08.08</li>
+              </ul>
+            </a></li>
+            <li><a href="#a">
+              <ul class="clearfix">
+                <li>★★★★★</li>
+                <li>믿고 구매할 수 있어서 좋네요~ 남자친구 생일선물로 구입했는데 너무 예쁘고 남자친구도 좋아하네요~ 시계줄은 근처 시계방 가서 3000원 주고 줄였어요 잘 구매한것 같아 기분 좋습니다!</li>
+                <li>suz*******</li>
+                <li>2021.08.08</li>
+              </ul>
+            </a></li>
+            <li><a href="#a">
+              <ul class="clearfix">
+                <li>★★★★★</li>
+                <li>친오빠 생일선물로 구매했는데 티쏘는 역시 티쏘인가봐요,, 넘 예쁘다 ... ㅠ 선물하려면 일주일정도 남았지만 분명 좋아할 것 같아요!! 좋은 선물할게요 감사합니다!!!</li>
+                <li>seg*******</li>
+                <li>2021.08.07</li>
+              </ul>
+            </a></li>
+            <li><a href="#a">
+              <ul class="clearfix">
+                <li>★★★★★</li>
+                <li>아버지 선물로 구입했는데 너무 좋아요 가성비 짱입니다. 많이 파시고 번창하세요!</li>
+                <li>ssu*******</li>
+                <li>2021.08.07</li>
+              </ul>
+            </a></li>
+            <li><a href="#a">
+              <ul class="clearfix">
+                <li>★★★★★</li>
+                <li>잘 구매했습니다. 지인분이 마음에 드시네요. 생각보다 세련되고 가볍습니다. 나이 좀 있으신 분에게 선물로 추천드립니다.</li>
+                <li>kai*******</li>
+                <li>2021.08.07</li>
+              </ul>
+            </a></li>
+            <li><a href="#a">
+              <ul class="clearfix">
+                <li>★★★★★</li>
+                <li>선물한건데 넘맘에 들어하네요!!! 제꺼도 사려고 생각중이에요 ㅎ 트레이니에도 낄수있게 심플한걸 고른건데 저도 넘 맘에 들어요!!</li>
+                <li>cha*******</li>
+                <li>2021.08.06</li>
+              </ul>
+            </a></li>
+            <li><a href="#a">
+              <ul class="clearfix">
+                <li>★★★★★</li>
+                <li>실물이 낫네요 ㅎ 구매하고서도 괜찮으려나 걱정 했는데 ㅎ 실물 보고 ㅎ 안도감이 들었습니다 ㅎ 선물 주려 산건데 ㅋ 잘 산듯요 ㅎㅎ</li>
+                <li>shn*******</li>
+                <li>2021.08.06</li>
+              </ul>
+            </a></li>
+            <li><a href="#a">
+              <ul class="clearfix">
+                <li>★★★★★</li>
+                <li>아주 멋진 스위스제 시계입니다. 디자인도 예쁘고 배송도 빠릅니다. 가성비가 최고입니다.</li>
+                <li>esv*******</li>
+                <li>2021.08.06</li>
+              </ul>
+            </a></li>
+          </ul>
+        </div>  <!--review_list 끝-->
+        <!-- 하단 페이지 컨트롤 영역 -->
+        <div class="review_list_control_area">
+          <span class="review_list_control_prev_end"><<</span>
+          <span class="review_list_control_prev"><i class="xi-angle-left-thin"></i></span>
+          <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+          <span class="review_list_control_next"><i class="xi-angle-right-thin"></i></span>
+          <span class="review_list_control_next_end">>></span>
+        </div>  <!--pdt_list_control_area 끝-->
+      </div>  <!--review_area 끝-->
+    </div>  <!--container 끝-->
+  </article>
+
+  <footer>
+    <div class="sns_area">
+      <div class="container">
+        <p>티쏘 사이트를 친구들과 공유해보세요!</p>
+        <ul>
+          <li><a href="#a"><i class="xi-facebook"></i></a></li>
+          <li><a href="#a"><i class="xi-twitter"></i></a></li>
+          <li><a href="#a"><i class="xi-instagram"></i></a></li>
+          <li><a href="#a"><i class="xi-youtube-play"></i></a></li>
+          <li><a href="#a"><i class="xi-pinterest-p"></i></a></li>
+          <li><a href="#a"><i class="xi-mail-o"></i></a></li>
+          <li><a href="#a"><i class="xi-qq"></i></a></li>
+          <li><a href="#a"><i class="xi-share-alt-o"></i></a></li>
+        </ul>
+      </div>
+    </div>  <!--sns_area 끝-->
+    <div class="footer_menu">
+      <div class="container">
+        <ul class="clearfix">
+          <li><a href="#a">브랜드 소개</a>
+            <ul>
+              <li><a href="#a">회사소개</a></li>
+              <li><a href="#a">회사역사</a></li>
+              <li><a href="#a">티쏘 미디어</a></li>
+            </ul>
+          </li>
+          <li><a href="#a">법률정보</a>
+            <ul>
+              <li><a href="#a">개인정보고지</a></li>
+              <li><a href="#a">이용약관</a></li>
+              <li><a href="#a">판매약관</a></li>
+              <li><a href="#a">쿠키설정</a></li>
+            </ul>
+          </li>
+          <li><a href="#a">티쏘정보</a>
+            <ul>
+              <li><a href="#a">티쏘 미디어</a></li>
+              <li><a href="#a">티쏘 뉴스룸</a></li>
+              <li><a href="#a">위조품 근절</a></li>
+              <li><a href="#a">기업용 선물</a></li>
+            </ul>
+          </li>
+          <li><a href="#a">고객센터</a>
+            <ul>
+              <li><a href="#a">공식판매점 찾기</a></li>
+              <li><a href="#a">자주하는 질문</a></li>
+              <li><a href="#a">시계관리</a></li>
+              <li><a href="#a">품질 보증서</a></li>
+            </ul>
+          </li>
+          <li><a href="#a">이용안내</a>
+            <ul>
+              <li><a href="#a">이용안내</a></li>
+              <li><a href="#a">메뉴얼 찾기</a></li>
+              <li><a href="#a">연락처</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>  <!--footer_menu 끝-->
+    <div class="footer">
+      <h2><img src="images/footer_logo.png" alt="푸터로고"><span>Copyright © TISSOT SA - SWISS WATCHES SINCE 1853 - ALL RIGHT RESERVED</span></h2>
+    </div>
+    <div class="topScroll_btn">
+      <div class="topScroll">
+        <i class="xi-caret-up"></i>
+        <i class="xi-caret-up"></i>
+        <i class="xi-caret-up"></i>
+        <span>top</span>
+      </div>
+    </div>
+  </footer>
+   <!-- 팝업창 -->
+   <div class="popUp_modal">
+    <div class="history_iframe clearfix">
+      <iframe class="history" src="https://www.youtube-nocookie.com/embed/VY5PW_JJQGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+    <div class="popUp_area">
+      <div class="closeBtn">
+        <i class="xi-arrow-left"></i>
+        <p>History</p>
+      </div>
+      <!-- <div class="popUp_cookie_area">
+        <input type="checkbox" id="popUp_check">
+        <label for="popUp_check"><span><i class="xi-check"></i></span>오늘 하루 보이지 않기</label>
+      </div> -->
+      
+      <div class="popUp_slider">
+        <ul>
+          <li><img src="images/popupImg1.png" alt="팝업이미지"></li>
+          <li><img src="images/popupImg2.png" alt="팝업이미지"></li>
+        </ul>
+      </div>
+      <div class="popUp_txt">
+        <h2><img src="images/popUp_logo.png" alt="로고"></h2>
+        <p>티쏘(TISSOT)는 168년 역사의 스위스메이드 전문 시계 브랜드로<br>
+          'THIS IS YOUR TIME' 을 기본 철학으로 라이프 스타일 크리에이터로써<br>
+          당신의 소중한 시간을 함께 합니다.<br>
+          뛰어난 기술력과 함께 트랜디한 디자인을 기반한<br>
+          럭셔리한 골드 라인부터 스포티한 제품 그리고 여성 라인까지 다양한 제품군으로<br>
+          전 세계 소비자들로부터 많은 사랑을 받고 있습니다.</p>
+        <span>티쏘 브랜드 역사</span>
+      </div>
+    </div>  <!--popUp_area 끝-->
+  
+  <script>
+    // 브랜드역사 팝업 스크립트
+    let popUp_area = document.querySelector(".popUp_area"),
+        popUp_modal = document.querySelector(".popUp_modal"),
+        popUp_slider = document.querySelector(".popUp_slider>ul"),
+        slider_li = document.querySelectorAll(".popUp_slider li"),
+        closeBtn = document.querySelector(".closeBtn"),
+        popSlideIdx = 0;
+
+    // 팝업슬라이드
+    setInterval(function(){
+      if(popSlideIdx == 2){popSlideIdx = 0};
+      popUp_slider.style.left = -(100 * popSlideIdx) + "%";
+      popSlideIdx++;
+    }, 4000)
+
+    // 티쏘 역사 팝업 닫기&열기
+    closeBtn.addEventListener("click", function(){
+      if(popUp_modal.style.display == ""){
+        document.getElementsByTagName("body")[0].classList.add("not_scroll");
+        document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+        popUp_area.style.left = "0";
+        setTimeout(function(){
+          popUp_modal.style.display = "block";
+          popUp_modal.style.opacity = "1";
+        }, 250)
+        document.querySelector(".closeBtn p").innerHTML = "close";
+        document.querySelector(".closeBtn i").style.transform = "rotate(0deg)";
+        this.style.color = "#fff";
+        // 유튜브링크
+        document.querySelector(".history").style.animation = "fadeLeft 1s";
+        document.querySelector(".history").style.display = "block";
+      } else {
+        document.getElementsByTagName("body")[0].classList.remove("not_scroll");
+        document.getElementsByTagName("body")[0].style.overflowY = "auto";
+        popUp_area.style.left = "-40%";
+        popUp_modal.style.opacity = "0";
+        setTimeout(function(){
+          popUp_modal.style.display = "";
+        }, 650)
+        document.querySelector(".closeBtn p").innerHTML = "History";
+        document.querySelector(".closeBtn i").style.transform = "rotate(180deg)";
+        this.style.color = "#303030";
+        // 유튜브링크
+        // document.querySelector(".history").style.animation = "fadeLeft 1s";
+        document.querySelector(".history").style.display = "none";
+      }
+     })
+  </script>
+  
+  <script>
+     // 내비게이션 스크롤 스크립트
+    let dHeight = document.documentElement.scrollHeight; 
+    let navHeight = document.querySelector("#nav").offsetHeight; 
+    let topScroll_btn = document.querySelector(".topScroll_btn");
+    let wScroll; // 여기에다 미리 = document.documentElement.scrollTop; 이걸 저장하면 실시간 반영이 안된다
+
+    window.addEventListener("scroll", function(){
+      wScroll = document.documentElement.scrollTop;
+      if(wScroll >= navHeight){
+        document.querySelector("#nav").classList.add("on");
+      } else {
+        document.querySelector("#nav").classList.remove("on");
+      }
+
+       // 스크롤 탑 버튼
+       if(wScroll > dHeight / 5){
+        topScroll_btn.classList.add("show");
+      } else {
+        topScroll_btn.classList.remove("show");
+      }
+    });
+
+    topScroll_btn.addEventListener("click", function(){
+      setScrollReturn();
+      });
+
+      function setScrollReturn(){
+        var setScroll = setInterval(function(){
+          if(wScroll != 0){
+            window.scrollBy(0, -140);
+          } else {
+            clearInterval(setScroll);
+          }
+        }, 15)
+      }
+
+
+    // 메인 페럴렉스 스크립트
+    $(document).ready(function(){
+
+      $(window).scroll(function(){
+        let wScroll = $(this).scrollTop();
+
+        if(wScroll >= $(".pdt_detail_info_1").offset().top - $(window).height() / 1.5){
+          $(".pdt_detail_info_1").addClass("show");
+        }
+        if(wScroll >= $(".pdt_detail_info_2").offset().top - $(window).height() / 1.5){
+          $(".pdt_detail_info_2").addClass("show");
+        }
+        if(wScroll >= $(".pdt_detail_info_3_img1").offset().top - $(window).height() / 1.5){
+          $(".pdt_detail_info_3_img1").addClass("show");
+        } 
+        if(wScroll >= $(".pdt_detail_info_3_img2").offset().top - $(window).height() / 1.5){
+          $(".pdt_detail_info_3_img2").addClass("show");
+        }
+
+        // info 4 페럴렉스
+        if(wScroll >= $(".pdt_detail_info_4").offset().top - $(window).height() / 1.5){
+          $(".pdt_detail_info_4").addClass("show");
+        }
+        if(wScroll >= $(".info4_img1").offset().top - $(window).height() / 1.5){
+          $(".info4_img1").addClass("show");
+          $(".info_4_txt1").addClass("show");
+        }
+        if(wScroll >= $(".info4_img2").offset().top - $(window).height() / 1.5){
+          $(".info4_img2").addClass("show");
+          $(".info_4_txt2").addClass("show");
+        }
+        if(wScroll >= $(".info4_img3").offset().top - $(window).height() / 1.5){
+          $(".info4_img3").addClass("show");
+          $(".info_4_txt3").addClass("show");
+        }
+        if(wScroll >= $(".info4_img4").offset().top - $(window).height() / 1.5){
+          $(".info4_img4").addClass("show");
+          $(".info_4_txt4").addClass("show");
+        }
+        if(wScroll >= $(".info4_img5").offset().top - $(window).height() / 1.5){
+          $(".info4_img5").addClass("show");
+          $(".info_4_txt5").addClass("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
